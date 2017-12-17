@@ -17,20 +17,22 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 
 if is-executable git -a -d "$DOTFILES_DIR/.git"; then git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master; fi
 
-# Bunch of symlinks
+# Remove symlinks
 
-ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" ~
-ln -sfv "$DOTFILES_DIR/runcom/.inputrc" ~
-ln -sfv "$DOTFILES_DIR/runcom/.gemrc" ~
-ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
-ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
+rm -f "$HOME/.bash_profile"
+rm -f "$HOME/.inputrc"
+rm -f "$HOME/.gemrc"
+rm -f "$HOME/.gitconfig"
+rm -f "$HOME/.gitignore_global"
 
 # Package managers & packages
 
-. "$DOTFILES_DIR/install/brew.sh"
-. "$DOTFILES_DIR/install/bash.sh"
-. "$DOTFILES_DIR/install/brew-cask.sh"
 #. "$DOTFILES_DIR/install/gem.sh"
+. "$DOTFILES_DIR/uninstall/brew-cask.sh"
+. "$DOTFILES_DIR/uninstall/bash.sh"
+. "$DOTFILES_DIR/uninstall/brew.sh"
+
+exit
 
 # Run tests
 
