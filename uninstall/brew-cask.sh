@@ -32,10 +32,10 @@ fi
 # )
 
 apps=(
+  sourcetree
   vlc
  )
 
-#
 brew cask uninstall "${apps[@]}" || true
 
 brew untap caskroom/cask

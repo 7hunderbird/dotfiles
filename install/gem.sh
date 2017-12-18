@@ -5,10 +5,14 @@ fi
 
 brew install gpg2
 
-\curl -sSL https://get.rvm.io | bash -s stable
+command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 
-rvm install 2.3
-rvm use 2.3 --default
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
 
-gem install lunchy
-gem install pygmentize
+source $HOME/.rvm/scripts/rvm
+
+rvm install 2.4.1
+rvm use 2.4.1 --default
+
+gem install bundler
+gem install cf-uaac

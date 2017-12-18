@@ -27,12 +27,10 @@ rm -f "$HOME/.gitignore_global"
 
 # Package managers & packages
 
-#. "$DOTFILES_DIR/install/gem.sh"
+. "$DOTFILES_DIR/uninstall/gem.sh"
 . "$DOTFILES_DIR/uninstall/brew-cask.sh"
 . "$DOTFILES_DIR/uninstall/bash.sh"
 . "$DOTFILES_DIR/uninstall/brew.sh"
-
-exit
 
 # Run tests
 

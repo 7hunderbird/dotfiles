@@ -3,6 +3,6 @@ if ! is-macos -o ! is-executable brew; then
   return
 fi
 
-brew uninstall bash || true
+brew uninstall --ignore-dependencies bash || true
 
 chsh -s /bin/bash
